@@ -437,10 +437,4 @@ def get_items(item):
     profile = item[3]
     return s, token, headers, profile
 
-hwid = subprocess.check_output("wmic csproduct get uuid").decode().split("\n")[1].strip()
-if hwid in httpx.get("https://pastebin.com/raw/fp0x8j7s").text:
-    bot.run(settings["botToken"])
-else:
-    print(f"{Fore.LIGHTRED_EX}Not Whitelisted!\n\nHWID: {hwid}")
-
-    input()
+bot.run(settings["botToken"])
